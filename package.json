@@ -1,0 +1,74 @@
+{
+  "name": "humanbytes",
+  "version": "1.3.0",
+  "description": "Human-readable byte sizes: 1536 <-> '1.5 KB'. Parse and format KB/kB/KiB, bits, bigint and locales. Drop-in for bytes and pretty-bytes. Zero dependencies.",
+  "keywords": [
+    "bytes",
+    "byte-size",
+    "file-size",
+    "filesize",
+    "size",
+    "human-readable",
+    "humanize",
+    "pretty-bytes",
+    "format",
+    "parse",
+    "convert",
+    "kb",
+    "mb",
+    "gb",
+    "kib",
+    "mib",
+    "iec",
+    "si",
+    "bits"
+  ],
+  "license": "MIT",
+  "author": "CK Giri <ckgdev@gmail.com>",
+  "funding": "https://github.com/ckgiri/humanbytes?sponsor=1",
+  "homepage": "https://www.npmjs.com/package/humanbytes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckgiri/humanbytes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ckgiri/humanbytes/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc -p .",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
